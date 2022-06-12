@@ -24,10 +24,8 @@ classifiers=[
 {%- endif %}
     'Natural Language :: English',
     'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 3.6',
-    'Programming Language :: Python :: 3.7',
-    'Programming Language :: Python :: 3.8',
     'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
 ]
 packages = [
     { include = "{{ cookiecutter.pkg_name }}" },
@@ -35,12 +33,12 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.6.2,<4.0"
+python = ">=3.9.*,<4.0"
 {%- if cookiecutter.command_line_interface|lower == 'click' %}
 click = "8.0.1"
 {%- endif %}
 
-black  = { version = "^21.5b2", optional = true}
+black  = { version = "^22.3.0", optional = true}
 isort  = { version = "^5.8.0", optional = true}
 flake8  = { version = "^3.9.2", optional = true}
 flake8-docstrings = { version = "^1.6.0", optional = true }
@@ -54,9 +52,7 @@ virtualenv  = { version = "^20.2.2", optional = true}
 pip  = { version = "^20.3.1", optional = true}
 mkdocs  = { version = "^1.1.2", optional = true}
 mkdocs-include-markdown-plugin  = { version = "^1.0.0", optional = true}
-mkdocs-material  = { version = "^6.1.7", optional = true}
 mkdocstrings  = { version = "^0.15.2", optional = true}
-mkdocs-material-extensions  = { version = "^1.0.1", optional = true}
 twine  = { version = "^3.3.0", optional = true}
 mkdocs-autorefs = {version = "^0.2.1", optional = true}
 pre-commit = {version = "^2.12.0", optional = true}
@@ -76,15 +72,23 @@ test = [
     "pytest-cov"
     ]
 
-dev = ["tox", "pre-commit", "virtualenv", "pip", "twine", "toml", "bump2version"]
+dev = [
+    #tox tests in multiple versions and virtualenvs
+    "tox",
+    # pre-commit makes sure you don't forget to do things before you commit locally
+    "pre-commit",
+    "virtualenv", "pip",
+    # twine uploads to pypi
+    "twine", "toml",
+    # this handles incrementing __verision__ in toml and __init__.py. poetry will handle this in verison 2
+    "bump2version"]
 
 doc = [
     "mkdocs",
     "mkdocs-include-markdown-plugin",
-    "mkdocs-material",
     "mkdocstrings",
-    "mkdocs-material-extension",
-    "mkdocs-autorefs"
+    "mkdocs-autorefs",
+    "mkdocs-gitlab-static-site-editor",
     ]
 
 {% if cookiecutter.command_line_interface|lower == 'click' -%}
@@ -95,7 +99,7 @@ doc = [
 [tool.black]
 line-length = 120
 skip-string-normalization = true
-target-version = ['py36', 'py37', 'py38']
+target-version = ['py39', 'py310']
 include = '\.pyi?$'
 exclude = '''
 /(
