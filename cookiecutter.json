@@ -5,7 +5,8 @@
   "project_short_description": "Skeleton project created by Cookiecutter PyPackage",
   "full_name": "Matt Katz",
   "email": "example-projects@morelightmorelight.com",
-  "github_username": "mattkatz",
+  "repo_type": ["gitlab", "github"]
+  "repo_username": "mattkatz",
   "version": "0.1.0",
   "command_line_interface": ["argparse", "click", "none"],
   "open_source_license": ["MIT", "BSD-3-Clause", "ISC", "Apache-2.0", "GPL-3.0-only", "Not open source"],

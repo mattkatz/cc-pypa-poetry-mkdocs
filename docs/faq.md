@@ -54,8 +54,8 @@
     email
     Your email address.
 
-    github_username
-    Your GitHub username.
+    repo_username
+    Your username on your public repo host (currently github or gitlab).
 
     version
     The starting version number of the package.

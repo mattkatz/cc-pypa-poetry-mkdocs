@@ -1,7 +1,7 @@
 site_name: {{ cookiecutter.project_name }}
-site_url: https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug }}
-repo_url: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
-repo_name: {{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
+site_url: https://{{ cookiecutter.repo_username }}.github.io/{{ cookiecutter.project_slug }}
+repo_url: https://github.com/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}
+repo_name: {{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}
 #strict: true
 nav:
   - Home: index.md
@@ -63,7 +63,7 @@ extra:
       link: https://github.com/waynerv/cookiecutter-pypackage
       name: Facebook
     - icon: fontawesome/brands/github
-      link: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
+      link: https://github.com/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}
       name: Github
     - icon: material/email
       link: "mailto:{{ cookiecutter.email }}"
