@@ -62,7 +62,13 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
     $ poetry install -E test -E doc -E dev
     ```
 
-5. Create a branch for local development:
+5. Install the pre-commit checks that make sure your pull request merges smoothly.
+
+    ```zsh
+    pre-commit install
+    ```
+
+6. Create a branch for local development:
 
     ```
     $ git checkout -b name-of-your-bugfix-or-feature
@@ -70,7 +76,7 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
 
     Now you can make your changes locally.
 
-6. When you're done making changes, check that your changes pass the
+7. When you're done making changes, check that your changes pass the
    tests, including testing other Python versions, with tox:
 
     ```

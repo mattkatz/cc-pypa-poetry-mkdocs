@@ -20,9 +20,9 @@
 
 ???+ Question
     # Why mkdocs over sphinx?
-    reStructured Text and Sphinx is way to tedious, though powerful. With extension,
-    you'll find almost all features are available in mkdocs, in a neat and productive
-    way. Poetry and Markdown, are the two key factors driven me develop this template.
+    reStructured Text and Sphinx is way too tedious, though powerful. With extension,
+    you'll find almost all features are available in mkdocs in a neat and productive
+    way. Poetry and Markdown are the two key factors driven me develop this template.
 
 ???+ Question
     # What are the configuration items?
@@ -75,13 +75,13 @@
     for your project.
 
     command_line_interface
-    Whether to create a console script using Python Click. Console script
-    entry point will match the project_slug. Options: \['click', "No
+    Whether to create a console script using Python Click or standard ArgParse. Console script
+    entry point will match the project_slug. Options: \['click', 'argparse', "No
     command-line interface"\]
     ```
 
-    except above settings, for CI/CD, you'll also need configure gitub repsitory secrets
-    at page repo > settings > secrtes, and add the following secrets:
+    except above settings, for CI/CD, you'll also need configure gitub repository secrets
+    at page repo > settings > secrets, and add the following secrets:
 
     - PERSONAL_TOKEN (required for publishing document to git pages)
     - TEST_PYPI_API_TOKEN (required for publishing dev release to testpypi)

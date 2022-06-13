@@ -6,7 +6,7 @@ You better visit PyPI to make sure your package name is unused.
 
 ## For Every Release
 
-0.  Make some pull requests, merge all changes from feature branch to master/main.
+0.  Make some pull requests, merge all changes from feature branch to main.
 
 1.  Update CHANGELOG.md manually. Make sure it follows the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard.
     Be noticed that  {{ cookiecutter.repo_type | capitalize }} workflow will read changelog and extract release notes automatically.
@@ -30,7 +30,7 @@ You better visit PyPI to make sure your package name is unused.
     > poetry run tox
     > ```
 
-5.  Push these commits to master/main:
+5.  Push these commits to main:
 
     > ``` bash
     > git push
