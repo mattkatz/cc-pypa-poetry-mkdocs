@@ -104,7 +104,7 @@ Before you submit a pull request, check that it meets these guidelines:
 3. The pull request should work for Python 3.9, 3.10, and all other versions in the `pyproject.toml` file. Check
 {%- if cookiecutter.repo_type == 'github' %}
    https://{{ cookiecutter.repo_type }}.com/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}/actions
-{%- if cookiecutter.repo_type == 'gitlab' %}
+{%- elif cookiecutter.repo_type == 'gitlab' %}
    https://gitlab.com/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}/-/pipelines
 {%- endif %}
    and make sure that the tests pass for all supported Python versions.

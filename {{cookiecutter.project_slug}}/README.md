@@ -8,7 +8,7 @@
 [![python](https://img.shields.io/pypi/pyversions/{{ cookiecutter.project_slug }}.svg)](https://pypi.org/project/{{ cookiecutter.project_slug }}/)
 [![Build Status](https://github.com/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}/actions/workflows/dev.yml/badge.svg)](https://github.com/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}/actions/workflows/dev.yml)
 [![codecov](https://codecov.io/gh/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}/branch/main/graphs/badge.svg)](https://codecov.io/github/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }})
-{%- if cookiecutter.repo_type == 'gitlab' %}
+{%- elif cookiecutter.repo_type == 'gitlab' %}
 [![pypi](https://img.shields.io/pypi/v/{{ cookiecutter.project_slug }}.svg)](https://pypi.org/project/{{ cookiecutter.project_slug }}/)
 [![python](https://img.shields.io/pypi/pyversions/{{ cookiecutter.project_slug }}.svg)](https://pypi.org/project/{{ cookiecutter.project_slug }}/)
 [![Build Status](https://gitlab.com/ebooks-tools/ebooks-lister/badges/main/pipeline.svg)](https://gitlab.com/ebooks-tools/e  books-lister/-/pipelines/)★

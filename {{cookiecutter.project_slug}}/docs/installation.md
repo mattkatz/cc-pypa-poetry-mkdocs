@@ -31,7 +31,7 @@ Or download the [archive][]:
 ``` console
 $ curl -OJL https://github.com/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}/tarball/main
 ```
-{%- if cookiecutter.repo_type == 'gitlab' %}
+{%- elif cookiecutter.repo_type == 'gitlab' %}
 ``` console
 $ curl -OJL https://gitlab.com/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}/-/archive/main/{{ cookiecutter.project_slug }}-main.tar
 ```
@@ -49,6 +49,6 @@ $ pip install .
   [{{cookiecutter.repo_type | capitalize }} repo]: https://%7B%7B%20cookiecutter.repo_type%20%7D%7D.com/%7B%7B%20cookiecutter.repo_username%20%7D%7D/%7B%7B%20cookiecutter.project_slug%20%7D%7D
 {%- if cookiecutter.repo_type == 'github' %}
   [archive]: https://github.com/%7B%7B%20cookiecutter.repo_username%20%7D%7D/%7B%7B%20cookiecutter.project_slug%20%7D%7D/tarball/main
-{%- if cookiecutter.repo_type == 'gitlab' %}
+{%- elif cookiecutter.repo_type == 'gitlab' %}
   [archive]: https://gitlab.com/%7B%7B%20cookiecutter.repo_username%20%7D%7D/%7B%7B%20cookiecutter.project_slug%20%7D%7D/-/archive/main/%7B%7B%20cookiecutter.project_slug%20%7D%7D-main.tar
 {%- endif %}
