@@ -18,7 +18,7 @@ repos:
       - id: isort
         args: [ "--filter-files" ]
   - repo: https://github.com/ambv/black
-    rev: 21.5b1
+    rev: 22.3.0
     hooks:
       - id: black
   - repo: https://github.com/pycqa/flake8
@@ -35,5 +35,5 @@ repos:
         {% if cookiecutter.command_line_interface|lower == 'click' -%}
         additional_dependencies:
           - types-click
-        {%- endif %}
-  {%- endif %}
+        {%- endif -%}
+  {%- endif -%}
