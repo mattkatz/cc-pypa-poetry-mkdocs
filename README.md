@@ -3,10 +3,10 @@
 Cookiecutter template for a Python package, built with popular develop tools and
 conform to best practice.
 
-[![CI Status](https://github.com/waynerv/cookiecutter-pypackage/actions/workflows/dev.yml/badge.svg)](https://github.com/waynerv/cookiecutter-pypackage/actions/workflows/dev.yml)
+[![CI Status](https://github.com/mattkatz/cc-pypa-poetry-mkdocs/actions/workflows/dev.yml/badge.svg)](https://github.com/mattkatz/cc-pypa-poetry-mkdocs/actions/workflows/dev.yml)
 [![License](https://img.shields.io/pypi/l/ppw)](https://opensource.org/licenses/BSD-2-Clause)
 
-* Documentation: <https://waynerv.github.io/cookiecutter-pypackage>
+* Documentation: <https://mattkatz.github.io/cc-pypa-poetry-mkdocs/>
 
 ## Features
 
@@ -24,11 +24,15 @@ This tool will create Python project with the following features:
 * [Mkdocstrings](https://mkdocstrings.github.io/): Auto API doc generation
 * Command line interface using [Click](https://click.palletsprojects.com/en/8.0.x/) (optional)
 * [bump2version](https://github.com/c4urself/bump2version): Pre-configured version bumping with a single command
+* Continuous Integration with [GitLab Pipelines](https://docs.gitlab.com/ee/ci/pipelines/), including:
+    - publish documents automatically when CI succeeds
+    - TODO: publish dev build/official release to TestPyPI/PyPI automatically when CI success
+    - TODO: extract changelog from CHANGELOG and integrate with release notes automatically
 * Continuous Integration/Deployment by [GitHub actions](https://github.com/features/actions), includes:
     - publish dev build/official release to TestPyPI/PyPI automatically when CI success
     - publish documents automatically when CI success
     - extract changelog from CHANGELOG and integrate with release notes automatically
-* Host your documentation from [GitHub Pages](https://pages.github.com) with zero-config
+* Host your documentation from [GitHub Pages](https://pages.github.com) or [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/) with zero-config
 
 ## Quickstart
 
@@ -41,11 +45,12 @@ pip install -U cookiecutter
 Generate a Python package project:
 
 ```
-cookiecutter https://github.com/waynerv/cookiecutter-pypackage.git
+cookiecutter https://github.com/mattkatz/cc-pypa-poetry-mkdocs
 ```
 
 Then follow **[Tutorial](docs/tutorial.md)** to finish other configurations.
 
 # Credits
+This repo is forked from [waynerv/cookiecutter-pypackage](https://github.com/waynerv/cookiecutter-pypackage), which 
+is forked from [zillionare/cookiecutter-pypackage](https://github.com/zillionare/cookiecutter-pypackage/), which originally forked from [audreyfeldroy/cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage)
 
-This repo is forked from [zillionare/cookiecutter-pypackage](https://github.com/zillionare/cookiecutter-pypackage/), which originally forked from [audreyfeldroy/cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage)

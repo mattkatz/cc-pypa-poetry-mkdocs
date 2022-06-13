@@ -1,6 +1,6 @@
 site_name: {{ cookiecutter.project_name }}
-site_url: https://{{ cookiecutter.repo_username }}.github.io/{{ cookiecutter.project_slug }}
-repo_url: https://github.com/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}
+site_url: https://{{ cookiecutter.repo_username }}.{{ cookiecutter.repo_type }}.io/{{ cookiecutter.project_slug }}
+repo_url: https://{{ cookiecutter.repo_type }}.com/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}
 repo_name: {{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}
 #strict: true
 nav:
@@ -62,9 +62,9 @@ extra:
       # replace with your own facebook link below
       link: https://github.com/waynerv/cookiecutter-pypackage
       name: Facebook
-    - icon: fontawesome/brands/github
-      link: https://github.com/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}
-      name: Github
+    - icon: fontawesome/brands/{{ cookiecutter.repo_type }}
+      link: https://{{ cookiecutter.repo_type }}.com/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}
+      name: {{ cookiecutter.repo_type | capitalize }}
     - icon: material/email
       link: "mailto:{{ cookiecutter.email }}"
   # to enable disqus, uncomment the following and put your disqus id below

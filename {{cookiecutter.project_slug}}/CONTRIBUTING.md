@@ -9,7 +9,7 @@ You can contribute in many ways:
 
 ### Report Bugs
 
-Report bugs at https://github.com/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}/issues.
+Report bugs at https://{{ cookiecutter.repo_type }}.com/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}/issues.
 
 If you are reporting a bug, please include:
 
@@ -19,12 +19,12 @@ If you are reporting a bug, please include:
 
 ### Fix Bugs
 
-Look through the GitHub issues for bugs. Anything tagged with "bug" and "help
+Look through the {{ cookiecutter.repo_type | capitalize }} issues for bugs. Anything tagged with "bug" and "help
 wanted" is open to whoever wants to implement it.
 
 ### Implement Features
 
-Look through the GitHub issues for features. Anything tagged with "enhancement"
+Look through the {{ cookiecutter.repo_type | capitalize }} issues for features. Anything tagged with "enhancement"
 and "help wanted" is open to whoever wants to implement it.
 
 ### Write Documentation
@@ -35,7 +35,7 @@ articles, and such.
 
 ### Submit Feedback
 
-The best way to send feedback is to file an issue at https://github.com/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}/issues.
+The best way to send feedback is to file an issue at https://{{ cookiecutter.repo_type }}.com/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}/issues.
 
 If you are proposing a feature:
 
@@ -48,11 +48,11 @@ If you are proposing a feature:
 
 Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for local development.
 
-1. Fork the `{{ cookiecutter.project_slug }}` repo on GitHub.
+1. Fork the `{{ cookiecutter.project_slug }}` repo on {{ cookiecutter.repo_type | capitalize }}.
 2. Clone your fork locally
 
     ```
-    $ git clone git@github.com:your_name_here/{{ cookiecutter.project_slug }}.git
+    $ git clone git@{{ cookiecutter.repo_type }}.com:your_name_here/{{ cookiecutter.project_slug }}.git
     ```
 
 3. Ensure [poetry](https://python-poetry.org/docs/) is installed.
@@ -77,7 +77,7 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
     $ poetry run tox
     ```
 
-7. Commit your changes and push your branch to GitHub:
+7. Commit your changes and push your branch upstream to {{ cookiecutter.repo_type | capitalize }}:
 
     ```
     $ git add .
@@ -85,7 +85,7 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
     $ git push origin name-of-your-bugfix-or-feature
     ```
 
-8. Submit a pull request through the GitHub website.
+8. Submit a pull request through the {{ cookiecutter.repo_type | capitalize }} website.
 
 ## Pull Request Guidelines
 
@@ -95,8 +95,12 @@ Before you submit a pull request, check that it meets these guidelines:
 2. If the pull request adds functionality, the docs should be updated. Put
    your new functionality into a function with a docstring, and add the
    feature to the list in README.md.
-3. The pull request should work for Python 3.6, 3.7, 3.8 and 3.9. Check
-   https://github.com/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}/actions
+3. The pull request should work for Python 3.9, 3.10, and all other versions in the `pyproject.toml` file. Check
+{%- if cookiecutter.repo_type == 'github' %}
+   https://{{ cookiecutter.repo_type }}.com/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}/actions
+{%- if cookiecutter.repo_type == 'gitlab' %}
+   https://gitlab.com/{{ cookiecutter.repo_username }}/{{ cookiecutter.project_slug }}/-/pipelines
+{%- endif %}
    and make sure that the tests pass for all supported Python versions.
 
 ## Tips
@@ -120,4 +124,4 @@ $ git push
 $ git push --tags
 ```
 
-GitHub Actions will then deploy to PyPI if tests pass.
+{{ cookiecutter.repo_type | capitalize }} will then deploy to PyPI if tests pass.

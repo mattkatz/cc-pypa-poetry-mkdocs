@@ -9,7 +9,7 @@ You better visit PyPI to make sure your package name is unused.
 0.  Make some pull requests, merge all changes from feature branch to master/main.
 
 1.  Update CHANGELOG.md manually. Make sure it follows the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard.
-    Be noticed that GitHub workflow will read changelog and extract release notes automatically.
+    Be noticed that  {{ cookiecutter.repo_type | capitalize }} workflow will read changelog and extract release notes automatically.
 
 2.  Commit the changelog changes:
 
@@ -38,13 +38,13 @@ You better visit PyPI to make sure your package name is unused.
 
     Before proceeding to the next step, please check workflows triggered by this push have passed.
 
-6.  Push the tags(created by bump2version) to master/main, creating the new release on both GitHub and PyPI:
+6.  Push the tags(created by bump2version) to main, creating the new release on both {{ cookiecutter.repo_type | capitalize }} and PyPI:
 
     > ``` bash
     > git push --tags
     > ```
 
-    Only tag name started with 'v'(lower case) will leverage GitHub release workflow.
+    Only tag name started with 'v'(lower case) will leverage {{ cookiecutter.repo_type | capitalize }} release workflow.
 
 7.  Check the PyPI listing page to make sure that the README, release
     notes, and roadmap display properly. If tox test passed, this should be ok, since

@@ -7,8 +7,8 @@ To start with, you will need [GitHub], [PyPI], [TestPyPI] and [Codecov] account.
 you don't have one, please follow the links to apply one before you get started on this
 tutorial.
 
-If you are new to Git and GitHub, you should probably spend a few minutes on
-some tutorials at the top of the page at [GitHub Help].
+If you are new to Git and GitHub or GitLab, you should probably spend a few minutes on
+some tutorials at the top of the page at [GitHub Help] or [GitLab Tutorials].
 
 ## Step 1: Install Cookiecutter
 
@@ -25,7 +25,7 @@ Now it's time to generate your Python package.
 Run the following command and feed with answers, If you don’t know what to enter, stick with the defaults:
 
 ```bash
-cookiecutter https://github.com/waynerv/cookiecutter-pypackage.git
+cookiecutter https://github.com/mattkatz/cc-pypa-poetry-mkdocs.git
 ```
 
 Finally, a new folder will be created under current folder, the name is the answer you
@@ -126,11 +126,13 @@ You can also activate the virtual environment manually with `poetry shell`, this
     machine. Otherwise, remove it from tox.ini and pyproject.toml (search python3.x then
     remove it).
 
-## Step 5: Create a GitHub Repo
+## Step 5: Create an upstream remote repo
 
-Go to your GitHub account and create a new repo named `my-package`, where
+Go to your GitHub or GitLab account and create a new repo named `my-package`, where
 `my-package` matches the `project_slug` from your answers to running
 cookiecutter.
+
+### GitHub
 
 Then go to repo > settings > secrets, click on 'New repository secret', add the following
  secrets:
@@ -138,6 +140,10 @@ Then go to repo > settings > secrets, click on 'New repository secret', add the 
 - TEST_PYPI_API_TOKEN, see [How to apply TestPyPI token]
 - PYPI_API_TOKEN, see [How to apply pypi token]
 - PERSONAL_TOKEN, see [How to apply personal token]
+
+### GitLab
+
+TODO: Fill in secret settings that need to be here
 
 ## Step 6: Set Up codecov integration
 
@@ -158,12 +164,13 @@ which is not required for public repos:
 
 - CODECOV_TOKEN, see [Codecov GitHub Action - Usage](https://github.com/marketplace/actions/codecov?version=v1.5.2#usage)
 
-## Step 7: Upload code to GitHub
+## Step 7: Upload code to your remote repo
 
-Back to your develop environment, find the folder named after the `project_slug`.
-Move into this folder, and then setup git to use your GitHub repo and upload the
+Back to your development environment, find the folder named after the `project_slug`.
+Move into this folder, and then setup git to use your GitHub or GitLab repo and upload the
 code:
 
+### GitHub
 ``` bash
 cd my-package
 
@@ -173,6 +180,18 @@ git branch -M main
 git remote add origin git@github.com:myusername/my-package.git
 git push -u origin main
 ```
+
+### GitLab
+
+``` bash
+cd my-package
+
+git add .
+git commit -m "Initial commit."
+git branch -M main
+git remote add origin git@gitlab.com:myusername/my-package.git
+git push -u origin main
+`
 
 Where `myusername` and `my-package` are adjusted for your username and
 repo name.
@@ -188,7 +207,9 @@ You'll need a ssh key to push the repo. You can [Generate] a key or
 
 ### Check result
 
-After pushing your code to GitHub, goto GitHub web page, navigate to your repo, then
+#### GitHub
+
+After pushing your code to your remote repo, go to the web page of your repo and if it is GitHub, then
 click on actions link, you should find screen like this:
 
 ![](http://images.jieyu.ai/images/202104/20210419170304.png)
@@ -196,12 +217,24 @@ click on actions link, you should find screen like this:
 There should be some workflows running. After they finished, go to [TestPyPI], check if a
 new artifact is published under the name `project_slug`.
 
+#### GitLab
+
+TODO - you can find your CI workflows running under 
+https://gitlab.com/{your_username}/{your_repo}/-/pipelines
+
 ## Step 8. Check documentation
 
+### Github
 Documentation will be published and available at *https://{your_github_account}.github.io/{your_repo}* once:
 
 1. the commit is tagged, and the tag name is started with 'v' (lower case)
 2. build/testing executed by GitHub CI passed
+
+### Gitlab
+Documentation will be published and available at *https://{your_github_account}.gitlab.io/{your_repo}* once:
+
+1. the commit is tagged, and the tag name is started with 'v' (lower case)
+2. build/testing executed by GitLab CI passes
 
 If you'd like to see what it's look like now, you could run the following command:
 
@@ -224,6 +257,7 @@ This will run the builtin development server for you to preview.
 [GitHub]: https://github.com/
 [TestPyPI]: https://test.pypi.org/
 [GitHub Help]: https://help.github.com/
+[GitLab Tutorials]: https://docs.gitlab.com/ee/tutorials/
 [Generate]: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 [Add]: https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
 [How to apply testpypi token]: https://test.pypi.org/manage/account/

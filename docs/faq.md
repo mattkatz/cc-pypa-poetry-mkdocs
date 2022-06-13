@@ -86,3 +86,6 @@
     - PERSONAL_TOKEN (required for publishing document to git pages)
     - TEST_PYPI_API_TOKEN (required for publishing dev release to testpypi)
     - PYPI_API_TOKEN (required for publish )
+
+    TODO: You'll also need to add secrets to GitLab if using that for CI/CD
+    ```
