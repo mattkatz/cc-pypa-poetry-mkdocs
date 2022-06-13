@@ -191,7 +191,7 @@ git commit -m "Initial commit."
 git branch -M main
 git remote add origin git@gitlab.com:myusername/my-package.git
 git push -u origin main
-`
+```
 
 Where `myusername` and `my-package` are adjusted for your username and
 repo name.

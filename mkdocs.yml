@@ -1,4 +1,4 @@
-site_name: Cookiecutter Pypackage
+site_name: Cookiecutter Pypackage with Poetyr and mkdocs
 site_url: https://mattkatz.github.io/cc-pypa-poetry-mkdocs/
 repo_url: https://github.com/mattkatz/cc-pypa-poetry-mkdocs
 repo_name: mattkatz/cc-pypa-poetry-mkdocs
@@ -11,7 +11,7 @@ nav:
   - History: history.md
 
 theme:
-  name: material
+  name: readthedocs
   language: en
   #logo: assets/logo.png
   palette:
@@ -22,20 +22,6 @@ theme:
     - navigation.indexes
     - navigation.instant
     - navigation.tabs.sticky
-
-markdown_extensions:
-  - pymdownx.highlight:
-      linenums: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.superfences
-  - pymdownx.details
-  - admonition
-  - toc:
-      baselevel: 2
-      permalink: true
-      slugify: !!python/name:pymdownx.slugs.uslugify
 plugins:
   - include-markdown
   - search:
