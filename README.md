@@ -34,7 +34,7 @@ This tool will create a Python project with the following features:
     - extract changelog from CHANGELOG and integrate with release notes automatically
 * Host your documentation from [GitHub Pages](https://pages.github.com) or [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/) with zero-config
 
-## Quickstart
+## Quick start
 
 Install the latest Cookiecutter if you haven't installed it yet (this requires Cookiecutter 1.4.0 or higher):
 
