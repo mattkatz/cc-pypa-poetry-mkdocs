@@ -34,4 +34,4 @@ TODO: Add codecov badges for gitlab
 
 ## Credits
 
-This package was created with [Cookiecutter](https://github.com/audreyr/cookiecutter) and the [waynerv/cookiecutter-pypackage](https://github.com/waynerv/cookiecutter-pypackage) project template.
+This package was created with [Cookiecutter](https://github.com/audreyr/cookiecutter) and the [mattkatz/cc-pypa-poetry-mkdocs](https://mattkatz.github.io/cc-pypa-poetry-mkdocs/) project template.
