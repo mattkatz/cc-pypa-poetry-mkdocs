@@ -6,7 +6,9 @@ import pytest
 from click.testing import CliRunner
 {%- endif %}
 
+{%- if cookiecutter.command_line_interface | lower == 'click' -%}
 from {{ cookiecutter.pkg_name }} import cli
+{%- endif %}
 
 
 @pytest.fixture
